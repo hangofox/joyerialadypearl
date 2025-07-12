@@ -1,0 +1,235 @@
+//
+// Lists
+// --------------------------------------------------
+
+//===========================================
+//   Ordered and Unordered List Styles
+//===========================================
+ul, ol {
+  padding: 0;
+  list-style: none;
+  li {
+    line-height: @baseLineHeight;
+  }
+}
+
+ul.categories-module {
+  margin: 0 0 @baseLineHeight + 3;
+}
+
+//===========================================
+//   Ordered List Styles
+//===========================================
+ol {
+  list-style: none;
+  counter-reset: list;
+  li {
+    font: 14px/20px @serifFontFamily;
+    letter-spacing: 5px;
+    padding-bottom: 16px;
+    padding-left: 27px;
+    position: relative;
+    text-transform: uppercase;
+    &:before {
+      font-size: 10px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: "\f111";
+      color: @globalColor;
+      font-family: @fa;
+    }
+    a {
+      color: @grayDark;
+      &:hover {
+        color: @globalColor;
+      }
+    }
+  }
+}
+
+//===========================================
+// Unordered List Styles
+//===========================================
+.item_introtext,
+.item_fulltext,
+.category_desc,
+.site_map{
+  ul {
+    li {
+      font: 14px/20px @serifFontFamily;
+      letter-spacing: 5px;
+      padding-bottom: 16px;
+      position: relative;
+      text-transform: uppercase;
+      a {
+        color: @globalColor;
+        &:hover {
+          color: @grayDark;
+        }
+      }
+    }
+    &.nav-tabs {
+      li {
+        padding: 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    a,
+    span {
+      text-decoration: none;
+      color: @headingsColor;
+    }
+    a:hover {
+      color: @globalColor;
+    }
+  }
+}
+
+ul.tags,
+ul.nav,
+ul.btn-toolbar,
+ul.dropdown-menu,
+ul.chzn-results,
+ul.chzn-choices {
+  li {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+//===========================================
+// Icon List Styles
+//===========================================
+ul.icons {
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 44px;
+    padding-bottom: 24px;
+    &:before {
+      font-family: @outicons;
+      font-size: 24px;
+      color: @globalColor;
+      line-height: 24px;
+      width: auto;
+      height: auto;
+      top: 0;
+      position: absolute;
+      left: 0;
+    }
+    a {
+      color: @grayDark;
+      &:hover {
+        color: @globalColor;
+      }
+    }
+    &:nth-child(1):before {
+      content: '\e00c';
+    }
+    &:nth-child(2):before {
+      content: '\e011';
+    }
+    &:nth-child(3):before {
+      content: '\e03e';
+    }
+    &:nth-child(4):before {
+      content: '\e053';
+    }
+  }
+}
+
+//===========================================
+// Bootstrap Styles
+//===========================================
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  &.nav-child {
+    margin: 5px 0 0;
+  }
+}
+
+// Remove default list styles
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Single-line list items
+ul.inline,
+ol.inline {
+  margin-left: 0;
+  > li {
+    display: inline-block;
+    .ie7-inline-block();
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Description Lists
+dl + * {
+  margin-top: @baseLineHeight;
+}
+
+dt,
+dd {
+  line-height: @baseLineHeight;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: @baseLineHeight / 2;
+}
+
+// Horizontal layout (like forms)
+.dl-horizontal {
+  .clearfix(); // Ensure dl clears floats if empty dd elements present
+  dt {
+    float: left;
+    width: @horizontalComponentOffset - 20;
+    clear: left;
+    text-align: right;
+    .text-overflow();
+  }
+  dd {
+    margin-left: @horizontalComponentOffset;
+  }
+}
+
+.portfolio-meta-list {
+  display: table;
+  margin-left: 0;
+  overflow: hidden;
+  li {
+    color: @linkHoverColor;
+    display: table-row;
+    strong {
+      color: @globalColor;
+    }
+    > strong,
+    > span {
+      display: table-cell;
+    }
+    > span {
+      padding-left: 5px;
+      color: @textColor;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.item_fulltext .portfolio-meta-list li span:hover {
+  color: inherit;
+}

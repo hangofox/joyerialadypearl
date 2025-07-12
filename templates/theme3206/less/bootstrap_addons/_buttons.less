@@ -1,0 +1,270 @@
+//
+// Buttons
+// --------------------------------------------------
+
+@btnFontSize: @baseFontSize + 2;
+@btnLineHeight: @baseLineHeight;
+@btnHeight: 52px;
+@btnPadding: ((@btnHeight - @btnLineHeight)/2) 20px
+  ((@btnHeight - @btnLineHeight)/2)+1 20px;
+@btnBorderRadius: @baseBorderRadius;
+
+@btnColor: @white;
+@btnColorHighlight: @white;
+
+@btnBackground: @globalColor;
+@btnHighlightBackground: @headingsColor;
+@btnActBackground: @btnHighlightBackground;
+@btnBorder: none;
+
+// Info button(Read More)
+
+@btnInfoColor: @btnColor;
+@btnInfoColorHighlight: @btnColorHighlight;
+
+@btnInfoBackground: @btnBackground;
+@btnInfoHighlightBackground: @btnHighlightBackground;
+@btnActInfoBackground: @btnActBackground;
+
+@btnInfoBorder: @btnBorder;
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+
+.buttonBackgroundAlt(@bgColor, @textColor) {
+  background: @bgColor;
+  color: @textColor;
+}
+
+.btn {
+  font-family: @sansFontFamily;
+  border: @btnBorder;
+  .border-radius(0);
+  background: none;
+  color: @grayDark;
+  font-weight: bold;
+  font-family: @CondensedFontFamily;
+  cursor: pointer;
+  display: inline-block;
+  font-size: @btnFontSize;
+  line-height: @btnLineHeight;
+  letter-spacing: 0;
+  outline: none;
+  padding: 0;
+  text-shadow: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  text-align: center;
+  .transition(all 0.4s ease);
+  .fa {
+    margin: 0 3px;
+  }
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    pointer-events: none;
+  }
+  &:hover,
+  &:focus,
+  &.active,
+  &.selected {
+    outline: none;
+    background: none;
+    color: @globalColor;
+  }
+  &.jmodedit {
+    &:hover,
+    &:focus,
+    &:active {
+      > span {
+        .transform(rotateX(0deg) translateY(0px));
+      }
+    }
+  }
+  &#jform_profile_dob_btn {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+}
+
+form .btn{
+  background: @btnBackground;
+  color: @btnColor;
+  padding: @btnPadding;
+  &:hover {
+    background: @btnActBackground;
+    color: @btnColor;
+  }
+  &.active {
+    background: @btnActBackground;
+    color: @btnColor;
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  padding: @paddingLarge;
+  font-size: @fontSizeLarge;
+  .border-radius(@baseBorderRadius);
+}
+
+.btn-large [class^="icon-"],
+.btn-large [class*=" icon-"] {
+  margin-top: 4px;
+}
+
+// Small
+.btn-small {
+  padding: @paddingSmall;
+  font-size: @fontSizeSmall;
+  .border-radius(@baseBorderRadius);
+}
+
+.btn-small [class^="icon-"],
+.btn-small [class*=" icon-"] {
+  margin-top: 0;
+}
+
+.btn-mini [class^="icon-"],
+.btn-mini [class*=" icon-"] {
+  margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+  padding: @paddingMini;
+  font-size: @fontSizeMini;
+  .border-radius(@baseBorderRadius);
+}
+
+// Block button
+// -------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  .box-sizing(border-box);
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+  color: rgba(255, 255, 255, .75);
+}
+
+// Set the backgrounds
+// -------------------------
+// Warning appears are orange
+.btn-warning {
+  .buttonBackgroundAlt(@btnWarningBackground, @btnColor);
+  &:hover {
+    .buttonBackgroundAlt(@btnWarningBackgroundHighlight, @btnColorHighlight);
+  }
+}
+
+// Danger and error appear as red
+.btn-danger {
+  .buttonBackgroundAlt(@btnDangerBackground, @btnColor);
+  &:hover {
+    .buttonBackgroundAlt(@btnDangerBackgroundHighlight, @btnColorHighlight);
+  }
+}
+
+// Success appears as green
+.btn-success {
+  .buttonBackgroundAlt(@btnSuccessBackground, @btnColor);
+  &:hover {
+    .buttonBackgroundAlt(@btnSuccessBackgroundHighlight, @btnColorHighlight);
+  }
+}
+
+.btn-info {
+  &:after {
+    content: '\e00f';
+    color: #d9d8d8;
+    margin-left: 10px;
+    font-family: @outicons;
+  }
+  &:hover {
+  }
+}
+
+// Inverse appears as dark gray
+.btn-inverse {
+  .buttonBackgroundAlt(@btnInverseBackground, @btnColor);
+  &:hover {
+    .buttonBackgroundAlt(@btnInverseBackgroundHighlight, @btnColorHighlight);
+  }
+}
+
+// Cross-browser Jank@
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+// Link buttons
+// --------------------------------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.btn-link:active,
+.btn-link[disabled] {
+  background-color: transparent;
+  background-image: none;
+  .box-shadow(none);
+}
+
+.btn-link {
+  border-color: transparent;
+  cursor: pointer;
+  color: @linkColor;
+  .border-radius(0);
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  color: @linkHoverColor;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.btn-link[disabled]:hover,
+.btn-link[disabled]:focus {
+  color: @grayDark;
+  text-decoration: none;
+}

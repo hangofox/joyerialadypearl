@@ -1,0 +1,284 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+// =======================
+// Bootstrap Styles
+// =======================
+
+// ANIMATIONS
+// ----------
+
+// Webkit
+@-webkit-keyframes progress-bar-stripes {
+  from { background-position: 40px 0; }
+  to { background-position: 0 0; }
+}
+
+// Firefox
+@-moz-keyframes progress-bar-stripes {
+  from { background-position: 40px 0; }
+  to { background-position: 0 0; }
+}
+
+// IE9
+@-ms-keyframes progress-bar-stripes {
+  from { background-position: 40px 0; }
+  to { background-position: 0 0; }
+}
+
+// Opera
+@-o-keyframes progress-bar-stripes {
+  from { background-position: 0 0; }
+  to { background-position: 40px 0; }
+}
+
+// Spec
+@keyframes progress-bar-stripes {
+  from { background-position: 40px 0; }
+  to { background-position: 0 0; }
+}
+
+// THE BARS
+// --------
+
+// Outer container
+.progress {
+  overflow: hidden;
+  height: @baseLineHeight;
+  margin-bottom: @baseLineHeight;
+  #gradient > .vertical(#F5F5F5, #F9F9F9);
+  .box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
+  .border-radius(@baseBorderRadius);
+}
+
+// Bar of progress
+.progress .bar {
+  width: 0%;
+  height: 100%;
+  color: @white;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  .box-sizing(border-box);
+  .transition(width .6s ease);
+}
+
+.progress .bar + .bar {
+  .box-shadow("inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15)");
+}
+
+// Striped bars
+.progress-striped .bar {
+  #gradient > .striped(#149BDF);
+  .background-size(40px 40px);
+}
+
+// Call animation for the active one
+.progress.active .bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -moz-animation: progress-bar-stripes 2s linear infinite;
+  -ms-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+// COLORS
+// ------
+
+// Danger (red)
+.progress-danger .bar, .progress .bar-danger {
+  #gradient > .vertical(#EE5F5B, #C43C35);
+}
+
+.progress-danger.progress-striped .bar, .progress-striped .bar-danger {
+  #gradient > .striped(#EE5F5B);
+}
+
+// Success (green)
+.progress-success .bar, .progress .bar-success {
+  #gradient > .vertical(#62C462, #57A957);
+}
+
+.progress-success.progress-striped .bar, .progress-striped .bar-success {
+  #gradient > .striped(#62C462);
+}
+
+// Info (teal)
+.progress-info .bar, .progress .bar-info {
+  #gradient > .vertical(#5BC0DE, #339BB9);
+}
+
+.progress-info.progress-striped .bar, .progress-striped .bar-info {
+  #gradient > .striped(#5BC0DE);
+}
+
+// Warning (orange)
+.progress-warning .bar, .progress .bar-warning {
+  #gradient > .vertical(lighten(@orange, 15%), @orange);
+}
+
+.progress-warning.progress-striped .bar, .progress-striped .bar-warning {
+  #gradient > .striped(lighten(@orange, 15%));
+}
+
+// =======================
+// Horizontal Progress Bar
+// =======================
+.progress-horizontal {
+  position: relative;
+  height: 31px;
+  opacity: 0;
+  visibility: hidden;
+  &:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: @grayDark;
+    height: 7px;
+    top: 50%;
+    margin-top: -3.5px;
+    content: '';
+  }
+  .text {
+    background: @globalColor;
+    color: white;
+    width: 60px;
+    height: 36px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    text-align: center;
+    font: 17px/36px @CondensedFontFamily;
+    margin-bottom: 17px;
+  }
+  .text-inner {
+    margin-right: -27px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      .translate(-50%, 0);
+      bottom: -8px;
+      // .triangle(bottom, 16px, 8px, @globalColor);
+    }
+  }
+  .bar {
+    background: @bodyBackground;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    clip: rect(0, auto, auto, auto);
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      background: @white;
+      height: 7px;
+      top: 50%;
+      margin-top: -3.5px;
+      content: '';
+    }
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 6px;
+      background: @globalColor;
+      content: '';
+    }
+  }
+}
+
+//Animation
+.visible-first > .item_content > .progress-horizontal {
+  visibility: visible;
+  .opacity(100);
+  .bar {
+    .animation(2s ease h-progress);
+  }
+}
+
+// =======================
+// Vertical Progress Bar
+// =======================
+
+.progress-vertical {
+  position: relative;
+  width: 60px;
+  margin: 30px auto;
+  background: #000;
+  height: 200px;
+  opacity: 0;
+  visibility: hidden;
+  .text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+  }
+  .bar {
+    background: @globalColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    clip: rect(0, auto, auto, auto);
+    .text-inner {
+      color: #000;
+      bottom: 0;
+    }
+  }
+}
+
+//Animation
+.visible-first > .item_content > .progress-vertical {
+  .opacity(100);
+  visibility: visible;
+  .bar {
+    .animation(v-progress 2s ease);
+  }
+}
+
+// =======================
+// Radial Progress Bar
+// =======================
+@bgColor: @bodyBackground;
+@stroke-color: @grayDark;
+@trail-color: @bodyBackground;
+
+.radial-progress {
+  position: relative;
+  line-height: 0;
+  max-width: 130px;
+  margin: 0 auto;
+  border: 13px solid @globalColor;
+  .border-radius(1000px);
+  padding: 9px;
+  &:before {
+    position: absolute;
+    background: @bodyBackground;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    content: '';
+  .border-radius(1000px);
+  }
+  svg {
+    path:first-child {
+      stroke: @trail-color !important;
+    }
+    path:last-child {
+      stroke: @stroke-color !important;
+      fill: @bgColor !important;
+    }
+  }
+  .progressbar-text {
+    color: @globalColor !important;
+    font: 37px/40px@CondensedFontFamily;
+  }
+}

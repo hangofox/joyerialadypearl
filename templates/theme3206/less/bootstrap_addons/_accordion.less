@@ -1,0 +1,124 @@
+//
+// Accordion
+// --------------------------------------------------
+
+// Parent container
+.accordion {
+  margin-bottom: @baseLineHeight;
+}
+
+// Group == heading + body
+.accordion-group {
+  overflow: hidden;
+  margin: 0 ;
+  + .accordion-group {
+    border-top: 1px solid #929292;
+    margin-top: 23px;
+    padding-top: 23px;
+  }
+}
+.accordion-heading {
+  border-bottom: 0;
+}
+
+//==================================
+// Accordion Toggle Styles
+//==================================
+.accordion-toggle {
+  font: 15px/20px @serifFontFamily;
+  display: block;
+  letter-spacing: 5px;
+  padding: 16px 20px 16px 75px;
+  position: relative;
+  color: @headingsColor;
+  text-transform: uppercase;
+  &:before {
+    content: '\f067';
+    font: 22px/53px FontAwesome;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 53px;
+    color: @white;
+    background: @grayDark;
+    margin-top: -26px;
+  }
+  &.selected {
+    color: @globalColor;
+    &:before {
+      content: '\f068';
+      background: @globalColor;
+    }
+  }
+  &:hover {
+    &:before {
+    }
+  }
+}
+
+//==================================
+// Accordion Inner Styles
+//==================================
+.accordion-inner {
+  padding: 0px 20px 0px 74px;
+}
+
+//==================================
+// Custom Accordion Styles
+//==================================
+
+.mod-bootstrap-collapse__custom {
+  .accordion-toggle {
+    background: white;
+    font: 15px/20px @serifFontFamily;
+    display: block;
+    letter-spacing: 5px;
+    padding: 17px 70px 16px 27px;
+    position: relative;
+    color: @headingsColor;
+    text-transform: uppercase;
+    border-left: 6px solid @grayDark;
+    .transition(all 0s linear);
+    &:before {
+      content: "\f105";
+      font: 28px/53px FontAwesome;
+      right: 0;
+      left: auto;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      width: 53px;
+      color: @grayDark;
+      background: @white;
+      margin-top: -26px;
+    }
+    &.selected {
+      color: @globalColor;
+      border-left-color: @globalColor;
+      &:before {
+        color: @globalColor;
+        content: "\f107";
+      }
+    }
+    &:hover {
+      border-left-color: @globalColor;
+      &:before {
+      }
+    }
+  }
+  .accordion-group {
+    overflow: hidden;
+    margin: 0 ;
+    + .accordion-group {
+      border-top: none;
+      margin-top: 7px;
+      padding-top: 0px;
+    }
+  }
+  .accordion-inner {
+    background: white;
+    border-left: 6px solid @globalColor;
+    padding: 0 20px;
+  }
+}

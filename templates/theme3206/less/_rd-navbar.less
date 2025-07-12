@@ -1,0 +1,568 @@
+/*==================   RD Mobile Menu    =====================*/
+@EXAMPLE-theme:
+panel background color,
+panel text color,
+menu-background-color,
+menu-item-color,
+menu-item-hover-color,
+menu-item-hover-background,
+menu-item-active-color,
+menu-item-active-background;
+
+@dark-theme:
+#2B3643,
+#FFF,
+#2B3643,
+#A5BFD2,
+#FFF,
+@globalColor,
+#fff,
+#313e4e;
+
+
+@light-theme:
+#FFF,
+#000,
+#FFF,
+#666,
+#FFF,
+@globalColor,
+#2d2d2d,
+#f5f5f5;
+
+//@psd-theme:
+//@navbar-default-bg,
+//@navbar-default-color,
+//@dropdown-bg,
+//@dropdown-link-color,
+//@dropdown-link-hover-color,
+//@dropdown-link-hover-bg,
+//@dropdown-link-active-color,
+//@dropdown-link-active-bg;
+
+
+@rd-theme: @light-theme;
+@rd-menu-toggle-preset: "button-lines-arrow-2";
+
+@rd-mobilepanel-height: 56px;
+@rd-button-size: 48px;
+@rd-icon-size: 24px;
+@rd-menu-width: 240px;
+
+.rd-mobilemenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999999;
+  text-align: left;
+  .transition(.3s all ease);
+
+  &.active {
+    right: 0;
+  }
+  &_submenu{
+    width: 100%!important;
+    padding: 15px 0;
+    .iceCols{
+      width: 100%!important;
+      float: none!important;
+    }
+    .icemega_cover_module{
+      width: 100% !important;
+    }
+    .iceCols > ul{
+      margin: 0;
+    }
+
+    .item, .item__module {
+      .opacity(100);
+      .translate(0, 0);
+    }
+    [class*="span"] {
+      width: 100% !important;
+    }
+  }
+
+}
+
+.rd-mobilemenu_ul {
+  position: fixed;
+  top: -@rd-mobilepanel-height;
+  left: 0;
+  bottom: -@rd-mobilepanel-height;
+  width: @rd-menu-width;
+  padding: (10px + @rd-mobilepanel-height*2) 0 (10px + @rd-mobilepanel-height);
+  color: extract(@rd-theme, 4);
+  background: extract(@rd-theme,3);
+  font-size: 14px;
+  line-height: 20px;
+  overflow: auto;
+  .box-shadow(5px 0 5px 0 rgba(0, 0, 0, .1));
+  .transform(translateX(-@rd-menu-width));
+  .transition(0.3s ease);
+  .transition(0.3s cubic-bezier(.55, 0, .1, 1));
+
+  .rd-mobilemenu.active & {
+    .transform(translateX(0));
+  }
+
+  .level_1 ul a.iceMenuTitle{
+    padding: 4px 20px;
+    display: block;
+    &:after{
+      display: none;
+    }
+    &:hover{
+      color: @white;
+    }
+  }
+
+  li.active{
+
+    > .iceMenuTitle{
+      background: extract(@rd-theme, 6);
+      color: extract(@rd-theme, 5);
+    }
+  }
+
+  .iceMenuTitle{
+    padding: 14px 15px 16px;
+  }
+
+  .iceMenuTitle {
+    display: block;
+
+
+    &.active {
+      background: extract(@rd-theme, 8);
+      color: extract(@rd-theme, 7);
+    }
+
+    &:hover {
+      background: extract(@rd-theme, 6);
+      color: extract(@rd-theme, 5);
+    }
+
+    .rd-submenu-toggle {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      right: 11px;
+      margin-top: -17.5px;
+      width: 32px;
+      height: 32px;
+      font: 400 10px @fa;
+      line-height: 32px;
+      text-align: center;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      .transition(.5s all ease);
+      z-index: 1;
+      background: rgba(0,0,0, .1);
+      &:after {
+        content: '\f078';
+      }
+
+
+      &:hover{
+        background: extract(@rd-theme, 3);
+        color: extract(@rd-theme, 4);
+      }
+    }
+
+    &.rd-with-ul {
+      position: relative;
+
+      &.active {
+        .rd-submenu-toggle {
+          .transform(rotate(180deg));
+        }
+      }
+    }
+  }
+
+  ul .iceMenuTitle {
+    padding-left: 40px;
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 16px;
+  }
+
+  ul ul {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    left: 0;
+    top: 0;
+    text-align: left;
+    transform: none;
+    &:before,
+    &:after{
+      display: none;
+    }
+    li{
+      border: none;
+      box-shadow: none;
+    }
+    .iceMenuTitle {
+      padding: 0;
+      margin: 0;
+      padding-left: 60px;
+      border: none;
+      color: inherit;
+      font-size: 14px;
+      border: none;
+      box-shadow: none;
+      &.active {
+        background: extract(@rd-theme, 8);
+        color: extract(@rd-theme, 7);
+      }
+
+      &:hover {
+        background: extract(@rd-theme, 6);
+        color: extract(@rd-theme, 5);
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 20px;
+  }
+}
+
+.rd-mobilepanel {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @rd-mobilepanel-height;
+  background: extract(@rd-theme, 1);
+  color: extract(@rd-theme, 2);
+  .box-shadow(0 3px 3px 0 rgba(0, 0, 0, .1));
+  z-index: 99999991;
+}
+
+.rd-mobilepanel_title {
+  position: fixed;
+  padding-left: 10px;
+  top: 4px;
+  left: @rd-mobilepanel-height;
+  right: @rd-mobilepanel-height;
+  color: extract(@rd-theme, 2);
+  font-size: @rd-icon-size;
+  line-height: @rd-button-size;
+  letter-spacing: 1.2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  small{
+    display: none;
+  }
+}
+
+//===========   Mobilepanel Toggle Presets   ==============
+
+// Hamburger
+.button-lines() {
+  span {
+    position: relative;
+    display: block;
+    margin: auto;
+    .transition(all .3s ease);
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: (round(@rd-icon-size / 6)) * -2;
+      .transition(all .3s ease);
+    }
+
+    &:after {
+      top: (round(@rd-icon-size / 6)) * 2;
+    }
+
+    &:after,
+    &:before,
+    & {
+      width: @rd-icon-size;
+      height: round(@rd-icon-size / 6);
+      background-color: extract(@rd-theme, 2);
+      backface-visibility: hidden;
+      .border-radius(2px);
+    }
+  }
+}
+
+// Hamburger to Cross
+.button-lines__cross-1() {
+  &.active span {
+    background: transparent;
+
+    &:before, &:after {
+      .transform-origin(50% 50%);
+      top: 0;
+    }
+
+    &:before {
+      .transform(rotate(45deg));
+    }
+    &:after {
+      .transform(rotate(-45deg));
+    }
+  }
+}
+
+.button-lines__cross-2() {
+  span {
+    &:before, &:after {
+      -webkit-transition-duration: 0.3s, 0.3s;
+      transition-duration: 0.3s, 0.3s;
+      -webkit-transition-delay: 0.3s, 0s;
+      transition-delay: 0.3s, 0s;
+      -webkit-transition-property: top, -webkit-transform;
+      transition-property: top, transform;
+    }
+  }
+
+  &.active span {
+    transition: background .3s 0s ease;
+    background: transparent;
+
+    &:before, &:after {
+      top: 0;
+      -webkit-transition-delay: 0s, 0.3s;
+      transition-delay: 0s, 0.3s;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.button-lines__cross-3() {
+  span {
+    &:before, &:after {
+      -webkit-transition-duration: 0.3s, 0.3s;
+      transition-duration: 0.3s, 0.3s;
+      -webkit-transition-delay: 0.3s, 0s;
+      transition-delay: 0.3s, 0s;
+      -webkit-transition-property: top, -webkit-transform;
+      transition-property: top, transform;
+    }
+  }
+
+  &.active span {
+    .transform(rotate(180deg));
+    transition: background .3s 0s ease;
+    background: transparent;
+
+    &:before, &:after {
+      top: 0;
+      -webkit-transition-delay: 0s, 0.3s;
+      transition-delay: 0s, 0.3s;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Hamburger to Arrow
+.button-lines__arrow-1() {
+  span {
+    &:before,
+    &:after {
+      .transform-origin(@rd-icon-size/14 center);
+    }
+  }
+
+  &.active span {
+    &:before,
+    &:after {
+      top: 0;
+      width: @rd-icon-size/1.6;
+    }
+
+    &:before {
+      .transform(rotate(-40deg));
+    }
+    &:after {
+      .transform(rotate(40deg));
+    }
+  }
+}
+
+// Hamburger to Arrow (Material Design)
+.button-lines__arrow-2() {
+  span {
+    .transform(rotate(180deg));
+    &:before,
+    &:after {
+      .transform-origin(@rd-icon-size/14 center);
+      .transform-origin(@rd-icon-size/14 center);
+    }
+  }
+
+  &.active span {
+    .transform(rotate(360deg));
+
+    &:before,
+    &:after {
+      top: 0;
+      width: @rd-icon-size/1.6;
+    }
+
+    &:before {
+      -webkit-transform: rotate3d(0, 0, 1, -40deg);
+      transform: rotate3d(0, 0, 1, -40deg);
+    }
+    &:after {
+      -webkit-transform: rotate3d(0, 0, 1, 40deg);
+      transform: rotate3d(0, 0, 1, 40deg);
+    }
+  }
+}
+
+// Hamburger to Minus
+.button-lines__minus-1() {
+  span {
+    &:before,
+    &:after {
+      .transition(all .3s ease);
+    }
+  }
+
+  &.active span {
+    &:before,
+    &:after {
+      top: 0;
+    }
+  }
+}
+
+//===============   Mobilepanel Toggle   =================
+.rd-mobilepanel_toggle {
+  position: fixed;
+  top: 4px;
+  left: 8px;
+  width: @rd-button-size;
+  height: @rd-button-size;
+  background-color: extract(@rd-theme, 1);
+  border-color: transparent;
+  outline: none;
+  .transition(0.2s);
+  // &:hover{
+  //   .box-shadow(inset 0 0 10px -2px extract(@rd-theme, 2));
+  // }
+
+  & when (@rd-menu-toggle-preset = "button-lines-cross-1") {
+    .button-lines();
+    .button-lines__cross-1();
+  }
+
+  & when (@rd-menu-toggle-preset = "button-lines-cross-2") {
+    .button-lines();
+    .button-lines__cross-2();
+  }
+
+  & when (@rd-menu-toggle-preset = "button-lines-cross-3") {
+    .button-lines();
+    .button-lines__cross-3();
+  }
+
+  & when (@rd-menu-toggle-preset = "button-lines-arrow-1") {
+    .button-lines();
+    .button-lines__arrow-1();
+  }
+
+  & when (@rd-menu-toggle-preset = "button-lines-arrow-2") {
+    .button-lines();
+    .button-lines__arrow-2();
+  }
+
+  & when (@rd-menu-toggle-preset = "button-lines-minus-1") {
+    .button-lines();
+    .button-lines__minus-1();
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: @rd-mobilepanel-height;
+  }
+
+  .rd-mobilemenu, .rd-mobilepanel {
+    display: block;
+  }
+}
+
+@media (max-width: 359px) {
+  .rd-mobilepanel_title {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+//== TM Panes settings
+
+
+
+@media (max-width:767px){
+  //  Bg fo dots
+  div#panel .navbar-header .navbar-toggle .icon-bar{
+    background-color: extract(@rd-theme, 2);
+  }
+
+  //  links color & bg
+  div#panel #advanced .navbar-collapse li a,
+  div#panel #advanced .navbar-collapse .dropdown-menu li a{
+    background: fade(extract(@rd-theme,3),100)!important;
+    color: extract(@rd-theme, 4)!important;
+  }
+
+  //  links hover color & bg
+  div#panel #advanced .navbar-collapse li a:hover{
+    background: extract(@rd-theme, 6)!important;
+    color: extract(@rd-theme, 5)!important;
+  }
+
+  //  links active color & bg
+  div#panel #advanced .navbar-collapse .-tm-dropdown.open > a{
+    background-color: extract(@rd-theme, 8)!important;
+    color: extract(@rd-theme, 7)!important;
+  }
+
+
+  div#panel #advanced .navbar-collapse,
+  div#panel #advanced .navbar-collapse .dropdown-menu{
+    background: fade(extract(@rd-theme,3),100)!important;
+    padding-top: 0!important;
+    .box-shadow(0 0 2px 0 rgba(0,0,0,.5));
+  }
+}

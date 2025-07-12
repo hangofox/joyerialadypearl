@@ -1,0 +1,611 @@
+/* camera.less
+=========================================================*/
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@-webkit-keyframes h-progress {
+  0% {
+    width: 0;
+  }
+}
+@-moz-keyframes h-progress {
+  0% {
+    width: 0;
+  }
+}
+@-ms-keyframes h-progress {
+  0% {
+    width: 0;
+  }
+}
+@-o-keyframes h-progress {
+  0% {
+    width: 0;
+  }
+}
+@keyframes h-progress {
+  0% {
+    width: 0;
+  }
+}
+@-webkit-keyframes v-progress {
+  0% {
+    height: 0;
+  }
+}
+@-moz-keyframes v-progress {
+  0% {
+    height: 0;
+  }
+}
+@-ms-keyframes v-progress {
+  0% {
+    height: 0;
+  }
+}
+@-o-keyframes v-progress {
+  0% {
+    height: 0;
+  }
+}
+@keyframes v-progress {
+  0% {
+    height: 0;
+  }
+}
+.camera_prevThumbs,
+.camera_nextThumbs,
+.camera_commands,
+.camera_thumbs_cont {
+  background: #1e8d50;
+}
+.camera_prev:hover:before,
+.camera_next:hover:before {
+  color: #1e8d50;
+}
+.camera_pag .camera_pag_ul li {
+  background: #1e8d50;
+}
+/* caroufredsel.less
+=========================================================*/
+.caroufredsel_prev,
+.caroufredsel_next {
+  background: #1e8d50;
+}
+/* layout.less
+=========================================================*/
+/* template.less
+=========================================================*/
+@font-face {
+}
+.mod-newsflash-adv.droplist .item .dropcap {
+  color: #1e8d50;
+}
+.mod-newsflash-adv.team .item_content .item_introtext h1,
+.mod-newsflash-adv.team .item_content .item_introtext h2,
+.mod-newsflash-adv.team .item_content .item_introtext h3,
+.mod-newsflash-adv.team .item_content .item_introtext h4,
+.mod-newsflash-adv.team .item_content .item_introtext h5,
+.mod-newsflash-adv.team .item_content .item_introtext h6 {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__counters i {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__pricing_simple .item .item_content .header_content .price small {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__pricing_simple .item .item_content .header_content .price span {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__pricing_simple .item .item_content .btn {
+  background: #1e8d50;
+}
+.mod-newsflash-adv__pricing_simple .item .item_content:hover .header_content .price small {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__pricing_simple .item .item_content:hover .header_content .price span {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__pricing_simple .item .item_content:hover .btn {
+  background: #1e8d50;
+}
+.mod-newsflash-adv__pricing_detailed .item .item_content .item_title {
+  color: #1e8d50;
+}
+.mod-newsflash-adv__pricing_detailed .item .item_content .btn {
+  background: #1e8d50;
+}
+.mod-newsflash-adv__pricing_detailed .item .item_content:hover .price {
+  color: #1e8d50;
+}
+.page-blog .item .item_category-name,
+.page-item .item .item_category-name,
+.page-item__blog .item .item_category-name {
+  color: #1e8d50;
+}
+.item_info .item_info_dl dd {
+  color: #1e8d50;
+}
+.item_info .item_info_dl dd a:not(.btn) {
+  color: #1e8d50;
+}
+.social-links li a:hover {
+  background: #1e8d50;
+}
+.copyright a:hover {
+  color: #1e8d50;
+}
+ul.social li a:hover {
+  color: #1e8d50;
+}
+a {
+  color: #1e8d50;
+}
+b {
+  color: #1e8d50;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  color: #1e8d50;
+}
+h1.heading-style-5,
+h2.heading-style-5,
+h3.heading-style-5,
+h4.heading-style-5,
+h5.heading-style-5,
+h6.heading-style-5 {
+  color: #1e8d50;
+}
+blockquote:before {
+  color: #1e8d50;
+}
+.item_introtext strong,
+.item_fulltext strong,
+.category_desc strong {
+  color: #1e8d50;
+}
+.item_introtext mark,
+.item_fulltext mark,
+.category_desc mark {
+  background: #1e8d50;
+}
+ol li:before {
+  color: #1e8d50;
+}
+ol li a:hover {
+  color: #1e8d50;
+}
+.item_introtext ul li a,
+.item_fulltext ul li a,
+.category_desc ul li a,
+.site_map ul li a {
+  color: #1e8d50;
+}
+.item_introtext ul a:hover,
+.item_fulltext ul a:hover,
+.category_desc ul a:hover,
+.site_map ul a:hover,
+.item_introtext ul span:hover,
+.item_fulltext ul span:hover,
+.category_desc ul span:hover,
+.site_map ul span:hover {
+  color: #1e8d50;
+}
+ul.icons li:before {
+  color: #1e8d50;
+}
+ul.icons li a:hover {
+  color: #1e8d50;
+}
+.portfolio-meta-list li strong {
+  color: #1e8d50;
+}
+.chzn-container .chzn-results li.highlighted {
+  background: #1e8d50;
+}
+.chzn-container-single .chzn-single div {
+  background: #1e8d50;
+}
+.chzn-container-single.chzn-container-active.chzn-with-drop .chzn-single div {
+  background: #1e8d50;
+}
+span.checkbox label.checkbox_inner:before {
+  color: #1e8d50;
+}
+span.radio input[type="radio"]:checked + label.radio_inner:before {
+  background: #1e8d50;
+}
+.input-prepend .add-on i,
+.input-prepend .add-on > span {
+  color: #1e8d50;
+}
+.input-prepend .add-on:hover i {
+  background: #1e8d50;
+}
+/* Allow for input prepend/append in search forms */
+table th {
+  background: #1e8d50;
+}
+table a {
+  color: #1e8d50;
+}
+dl.table dt {
+  background: #1e8d50;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  background: #1e8d50;
+}
+.btn:hover,
+.btn:focus,
+.btn.active,
+.btn.selected {
+  color: #1e8d50;
+}
+form .btn {
+  background: #1e8d50;
+}
+.btn-link {
+  color: #1e8d50;
+}
+.nav-tabs:not(#sort) > li > a,
+.nav-tabs:not(#sort) > li > span {
+  background: #1e8d50;
+  border-left: 6px solid #1e8d50;
+}
+#sort li a:hover,
+#sort li span:hover {
+  color: #1e8d50;
+}
+#sort li.active > a,
+#sort li.active > span {
+  color: #1e8d50;
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  background-color: #1e8d50;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  background-color: #1e8d50;
+}
+.nav .dropdown-toggle .caret {
+  border-top-color: #1e8d50;
+  border-bottom-color: #1e8d50;
+}
+.breadcrumb a {
+  color: #1e8d50;
+}
+.pagination ul li > a:focus,
+.pagination ul li > span:focus {
+  background: #1e8d50;
+}
+.pagination ul li > .pagenav,
+.pagination ul li > .hasTooltip {
+  background: #1e8d50;
+}
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: #1e8d50;
+}
+.label,
+.badge {
+  background: #1e8d50;
+}
+@-webkit-keyframes progress-bar-stripes {
+}
+@-moz-keyframes progress-bar-stripes {
+}
+@-ms-keyframes progress-bar-stripes {
+}
+@-o-keyframes progress-bar-stripes {
+}
+@keyframes progress-bar-stripes {
+}
+.progress-horizontal .text {
+  background: #1e8d50;
+}
+.progress-horizontal .text-inner:before {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #1e8d50 transparent transparent transparent;
+}
+.progress-horizontal .bar:after {
+  background: #1e8d50;
+}
+.progress-vertical .bar {
+  background: #1e8d50;
+}
+.radial-progress {
+  border: 13px solid #1e8d50;
+}
+.radial-progress .progressbar-text {
+  color: #1e8d50 !important;
+}
+.accordion-toggle.selected {
+  color: #1e8d50;
+}
+.accordion-toggle.selected:before {
+  background: #1e8d50;
+}
+.mod-bootstrap-collapse__custom .accordion-toggle.selected {
+  color: #1e8d50;
+  border-left-color: #1e8d50;
+}
+.mod-bootstrap-collapse__custom .accordion-toggle.selected:before {
+  color: #1e8d50;
+}
+.mod-bootstrap-collapse__custom .accordion-toggle:hover {
+  border-left-color: #1e8d50;
+}
+.mod-bootstrap-collapse__custom .accordion-inner {
+  border-left: 6px solid #1e8d50;
+}
+@-ms-viewport {
+}
+/* Joomla => Bootstrap Tooltip */
+/* Common styling for Chosen Select Boxes with Input Prepend/Append */
+/* Accessible Hidden Elements (good for hidden labels and such) */
+/* Chosen proper wrapping in Bootstrap btn-group */
+/* Align tip text to left (old mootools tip) */
+.offline_container .well {
+  background: #1e8d50;
+}
+.offline_container .well .btn-primary:hover {
+  background: #1e8d50;
+  border-color: #1e8d50;
+}
+.mod-menu .nav.menu.nav-pills > li.active > a {
+  background: #1e8d50;
+}
+.icons .btn-group.pull-right ul.dropdown-menu > li > a:hover {
+  background: #1e8d50;
+}
+/*======================= Search & Smart Search ========================*/
+#habla_window_div .habla_offline_submit_input {
+  background: #1e8d50 !important;
+}
+#habla_window_div #habla_topbar_div {
+  background: #1e8d50 !important;
+}
+*::selection {
+  background: #1e8d50;
+}
+*::-moz-selection {
+  background: #1e8d50;
+}
+#section-kmt .kmt-head {
+  color: #1e8d50;
+}
+#section-kmt .kmt-head .author-kmt a:hover {
+  color: #1e8d50;
+}
+#section-kmt .kmt-inreplyto a:hover {
+  color: #1e8d50;
+}
+#section-kmt .kmt-time {
+  color: #1e8d50;
+}
+#section-kmt .kmt-control-user .kmt-btn:hover {
+  color: #1e8d50;
+}
+#section-kmt .kmt-like-counter:hover {
+  color: #1e8d50;
+}
+#section-kmt .kmt-rank-progress {
+  background: #1e8d50;
+}
+#section-kmt .kmt-item .kmt-form-submit a.replyButton:hover {
+  background: #1e8d50;
+  border-color: #1e8d50;
+}
+#section-kmt .cancelEditButton:hover {
+  background: #1e8d50;
+  border-color: #1e8d50;
+}
+.icemegamenu > ul > li > a.iceMenuTitle.hover,
+.icemegamenu > ul > li > a.iceMenuTitle.icemega_active {
+  color: #1e8d50;
+}
+.icemegamenu > ul > li.hover > a.iceMenuTitle {
+  color: #1e8d50;
+}
+.icemegamenu > ul > li.menu-parameter-form > a.iceMenuTitle:before:hover {
+  color: #1e8d50 !important;
+}
+.icemegamenu > ul > li.menu-login-form > a.iceMenuTitle:before:hover {
+  color: #1e8d50 !important;
+}
+.icemegamenu > ul > li.menu-login-form.hover > a.iceMenuTitle,
+.icemegamenu > ul > li.menu-login-form.hover > a.iceMenuTitle.hover > a.iceMenuTitle:hover {
+  color: #1e8d50;
+}
+ul.icesubMenu li a.iceMenuTitle {
+  color: #1e8d50;
+}
+.icemega_modulewrap.top_search > i.search:hover {
+  color: #1e8d50;
+}
+.icemega_modulewrap.top_search i.close:hover {
+  color: #1e8d50 !important;
+}
+.icemega_modulewrap.top_search .btn-primary:active,
+.icemega_modulewrap.top_search .btn-primary:focus,
+.icemega_modulewrap.top_search .btn-primary:hover,
+.icemega_modulewrap.top_search .btn-primary.active,
+.icemega_modulewrap.top_search .btn-primary.selected {
+  color: #1e8d50;
+}
+.icemega_modulewrap.top_search .btn-primary:active:hover,
+.icemega_modulewrap.top_search .btn-primary:focus:hover,
+.icemega_modulewrap.top_search .btn-primary:hover:hover,
+.icemega_modulewrap.top_search .btn-primary.active:hover,
+.icemega_modulewrap.top_search .btn-primary.selected:hover,
+.icemega_modulewrap.top_search .btn-primary:active.active,
+.icemega_modulewrap.top_search .btn-primary:focus.active,
+.icemega_modulewrap.top_search .btn-primary:hover.active,
+.icemega_modulewrap.top_search .btn-primary.active.active,
+.icemega_modulewrap.top_search .btn-primary.selected.active,
+.icemega_modulewrap.top_search .btn-primary:active.selected,
+.icemega_modulewrap.top_search .btn-primary:focus.selected,
+.icemega_modulewrap.top_search .btn-primary:hover.selected,
+.icemega_modulewrap.top_search .btn-primary.active.selected,
+.icemega_modulewrap.top_search .btn-primary.selected.selected {
+  color: #1e8d50;
+}
+#Kunena div.kblock div.kheader {
+  background: #1e8d50;
+}
+#Kunena .kcol-category-icon {
+  color: #1e8d50;
+}
+#Kunena span.kunreadforum,
+#Kunena span.knotloginforum,
+#Kunena .kwhoicon,
+#Kunena .kstatsicon {
+  color: #1e8d50;
+}
+#Kunena #kprofile-tabs dl.tabs dt.open,
+#Kunena #kprofile-edit dl.tabs dt.open,
+#Kunena #kprofile-tabs dl.tabs dt:hover,
+#Kunena #kprofile-edit dl.tabs dt:hover {
+  color: #1e8d50;
+}
+#Kunena .kicon-profile-location:before,
+#Kunena .kicon-profile-gender-male:before,
+#Kunena .kicon-profile-birthdate:before,
+#Kunena .kicon-profile-email:before {
+  color: #1e8d50;
+}
+#Kunena .kwhoonline strong {
+  color: #1e8d50;
+}
+#Kunena span.kcat-topics-number,
+#Kunena span.kcat-replies-number,
+#Kunena span.ktopic-views-number {
+  background: #1e8d50;
+}
+#Kunena div.klatest-subject-by:before {
+  color: #1e8d50;
+}
+#Kunena span.klatest-subject-time:before,
+#Kunena span.ktopic-date:before {
+  color: #1e8d50;
+}
+#Kunena ul#kstatslistleft li strong,
+#Kunena ul#kstatslistright li strong {
+  color: #1e8d50;
+}
+#Kunena div.klist-actions-info-all {
+  color: #1e8d50;
+}
+#Kunena td.klist-actions-info-all {
+  color: #1e8d50;
+}
+@media (max-width: 639px) {
+  #Kunena #kprofile-tabs dl.tabs dt.open,
+  #Kunena #kprofile-edit dl.tabs dt.open {
+    border-bottom: 1px solid #1e8d50;
+  }
+}
+.jg_subcatelem_txt:before {
+  background: #1e8d50;
+}
+.jg_subcatelem_txt ul a:hover {
+  color: #1e8d50;
+}
+.jg_catelem_txt ul li a:hover {
+  color: #1e8d50;
+}
+.jg_imgalign_catimgs .jg_catelem_txt:before {
+  background: #1e8d50;
+}
+.jg_imgalign_catimgs .jg_catelem_txt .jg_links a {
+  color: #1e8d50;
+}
+.jg_links {
+  color: #1e8d50;
+}
+.page-gallery__works .item_img .more_wrapper .vert-align {
+  color: #1e8d50;
+}
+.page-gallery__works .item_img .more_wrapper .vert-align:before {
+  background: #1e8d50;
+}
+.item_img .articleGalleryZoom:before,
+.item_img .galleryZoomIcon:before {
+  background: #1e8d50;
+}
+.login_shell {
+  background: #1e8d50;
+}
+.login_shell .btn-primary:hover {
+  background: #1e8d50;
+}
+.login_shell a:hover {
+  color: #1e8d50;
+}
+div#fixed-sidebar-right .moduletable.login > i.fa-user {
+  background: #1e8d50;
+}
+div#fixed-sidebar-right .moduletable.login .mod_login_wrapper {
+  background: #1e8d50;
+}
+div#fixed-sidebar-right .moduletable.login .mod_login_wrapper .input-prepend .add-on:hover i {
+  color: #1e8d50;
+}
+.page-category__history .items-row > div:before {
+  background: #1e8d50;
+}
+.page-category__history .items-row:before {
+  background: #1e8d50;
+}
+.page-category__faqs .item_title span.item_title_part0 {
+  color: #1e8d50;
+}
+.contact_details .icons-marker {
+  color: #1e8d50;
+}
+@media (max-width: 767px) {
+  .rd-mobilemenu_ul a.iceMenuTitle:hover {
+    background: #1e8d50;
+  }
+  .rd-mobilemenu_ul a.active,
+  .rd-mobilemenu_ul li.level_1.active > a {
+    color: #1e8d50;
+    background: #1e8d50;
+  }
+}

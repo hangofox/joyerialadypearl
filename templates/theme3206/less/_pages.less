@@ -1,0 +1,610 @@
+/*===== Privacy Page ======*/
+
+.page-item__privacy_policy .item_fulltext {
+  h4 {
+    float: left;
+    padding-right: 5%;
+    width: 35%;
+  }
+  p {
+    margin-left: 40%;
+    position: relative;
+    &:before {
+      border-right: 1px dotted @hrBorder;
+      bottom: 0px;
+      content: '';
+      left: -3%;
+      position: absolute;
+      top: 0;
+      width: 0px;
+    }
+  }
+}
+
+/*===== Elements Page ======*/
+
+.page-item__elements {
+  .item_fulltext {
+    padding-bottom: @baseLineHeight*2 !important;
+  }
+}
+
+.body__elements {
+  .tab-content {
+    min-height: 140px;
+  }  
+}
+
+/*===== History Page ======*/
+
+.page-category__history {
+  .items-row {
+    position: relative;
+    > div {
+      clear: both;
+      position: relative;
+      &:before {
+        color: @white;
+        content: '\f073';
+        display: block;
+        font-family: @fa;
+        position: absolute;
+        line-height: 40px;
+        .border-radius(1000px);
+        right: -37px;
+        text-align: center;
+        top: 15px;
+        width: 40px;
+        background: @globalColor;
+      }
+      .item {
+        border: 1px solid @tableBorderColor;
+        margin-right: 25px;
+        padding: 40px;
+        position: relative;
+        &:before,
+        &:after {
+          border-bottom: 10px solid transparent;
+          border-top: 10px solid transparent;
+          content: '';
+          position: absolute;
+          top: 20px;
+        }
+        &:before {
+          border-left: 10px solid @tableBorderColor;
+          right: -11px;
+        }
+        &:after {
+          border-left: 10px solid @bodyBackground;
+          right: -10px;
+        }
+        .item_introtext {
+          p {
+            padding-bottom: 0;
+          }
+        }
+        .item_info {
+          left: 100%;
+          margin-left: 80px;
+          position: absolute;
+          top: 20px;
+        }
+      }
+      & + div {
+        float: right;
+        &:before {
+          left: -4px;
+          right: auto;
+        }
+        .item {
+          margin-left: 25px;
+          margin-right: 0;
+          &:before,
+          &:after {
+            border-bottom: 10px solid transparent;
+            border-left: none;
+            border-top: 10px solid transparent;
+            content: '';
+            position: absolute;
+            right: auto;
+            top: 20px;
+          }
+          &:before {
+            border-right: 10px solid @tableBorderColor;
+            left: -11px;
+          }
+          &:after {
+            border-right: 10px solid @bodyBackground;
+            left: -10px;
+          }
+          .item_info {
+            left: auto;
+            margin-left: 0;
+            margin-right: 80px;
+            right: 100%;
+          }
+        }
+      }
+    }
+    &:before {
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 50%;
+      margin-left: @gridGutterWidth1200/2;
+      position: absolute;
+      top: 0;
+      width: 2px;
+      background: @globalColor;
+    }
+  }
+  .item_info_dl {
+    font-size: inherit;
+  }
+}
+
+/*===== FAQ Page ======*/
+
+.page-category__faqs {
+  .item_title {
+    span.item_title_part0 {
+      color: @globalColor;
+    }
+  }
+  .to_top {
+    margin-bottom: 30px;
+    position: relative;
+    text-align: right;
+    &:before {
+      background: @textColor;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+    }
+    a {
+      font-size: 18px;
+    }
+  }
+  .item {
+    margin-bottom: 0;
+  }
+}
+
+/*======================= Archives Page ========================*/
+
+.page-archive_filters {
+  .filter-search {
+    overflow: hidden;
+    padding-bottom: 21px;
+  }
+  select,
+  button {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+}
+
+/*======================= Contacts Page ========================*/
+
+#jform_contact_message {
+  height: 149px;
+  resize: none;
+  width: 100%;
+}
+
+#contact-form {
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+}
+
+.contact_misc {
+  margin-bottom: 15px;
+}
+
+#contact {
+  margin-top: 15px;
+}
+
+.phone-num {
+  display: inline-block;
+}
+
+#jform_contact_name,
+#jform_contact_email,
+#jform_contact_emailmsg {
+  width: 100%;
+}
+
+.contact_email-copy,
+.contact_vcard {
+  display: inline-block;
+  height: @inputHeight;
+  line-height: @inputHeight;
+  margin: 0 @inputHeight/2 0 0;
+}
+
+.contact_vcard {
+  margin: 0;
+}
+
+.contact_details {
+  .icons-marker {
+    display: block;
+    float: left;
+    line-height: @baseLineHeight;
+    margin-right: 5px;
+    width: 16px;
+    color: @globalColor;
+  }
+}
+
+.contact_address {
+  overflow: hidden;
+  padding-bottom: @baseLineHeight;
+}
+
+.contact_details_fax {
+  padding-bottom: @baseLineHeight;
+}
+
+#contact_map {
+  margin-bottom: @baseLineHeight;
+  .map {
+    border: 1px solid darken(@bodyBackground, 15%);
+    .box-sizing(border-box);
+    &.mfp-hide {
+      display: block !important;
+    }
+  }
+}
+
+#map {
+  margin-bottom: 30px;
+  header {
+    margin-bottom: 30px;
+  }
+}
+
+.map {
+  img {
+    max-width: none !important;
+  }
+}
+
+.mfp-content {
+  .map {
+    max-width: @gridRowWidth1200;
+  }
+}
+
+.contact_details_item {
+  margin-bottom: 20px;
+}
+
+/*======================= 404 PAGE =======================*/
+
+.errorBox {
+  background: none;
+  text-align: left;
+}
+
+#error {
+  .well {
+    margin-bottom: 0;
+  }
+}
+
+.body__404 {
+  .big-404 {
+    text-align: center;
+  }
+  big {
+    display: block;
+    font-weight: bold;
+    padding: 0 0 @baseFontSize;
+  }
+  .page-item__404 {
+    padding: 100px 0;
+  }
+  .mod-search_searchword + .btn {
+    margin-top: 10px;
+  }
+}
+
+/*======================= Site Map =======================*/
+.site_map {
+  .menu ul {
+    padding-left: 15px;
+    ul {
+      padding-left: 30px;
+      ul {
+        padding-left: 45px;
+      }
+    }
+  }
+}
+
+/*======================= Registration =======================*/
+#member-registration,
+#member-profile,
+#user-registration {
+  width: 65%;
+  margin: 0 auto;
+  .chzn-container {
+    width: 100% !important;
+  }
+  #helpsite-refresh {
+    margin-top: 10px;
+  }
+  .btn {
+    vertical-align: inherit;
+  }
+  .input-append {
+    .box-sizing(border-box);
+    padding-right: @inputHeight;
+    width: 50%;
+  }
+  .calendar_wrapper {
+    #jform_profile_dob_spacer-lbl {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+}
+
+.page-login {
+  text-align: center;
+  .btn {
+    vertical-align: inherit;
+  }
+  width: 50%;
+  margin: 0 auto;
+  .input-prepend {
+    width: 100%;
+  }
+}
+
+/*======================= ADMIN EDIT PAGES =======================*/
+#modules-form, #adminForm {
+  .chzn-container {
+    width: 100% !important;
+  }
+  .input-prepend, .input-append {
+    .btn + .btn {
+      margin-left: 1px;
+    }
+  }
+  .radio.btn-group > label {
+    margin-left: -(@radioWidth+2);
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .btn-toolbar > .btn {
+    margin: 0 5px 5px 0;
+    + .btn {
+      margin-left: 0;
+    }
+  }
+  .accordion-inner{
+    padding: 5px;
+  }
+}
+
+#adminForm #images {
+  .input-prepend.input-append {
+    width: 100%;
+    .btn {
+      width: 5%;
+      + input {
+        width: 85%;
+        + .btn {
+          width: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #contact_map {
+    height: 376px;
+  }
+
+  .page-category__history .items-row {
+    &:before {
+      margin-left: 9px;
+    }
+    > div:before {
+      right: -31px;
+    }
+    > div + div:before {
+      left: -10px;
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  .page-category__history .items-row {
+    &:before {
+      margin-left: 5px;
+    }
+    > div:before {
+      right: -27px;
+    }
+    > div + div::before {
+      left: -14px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  // History
+  .page-category__history .items-row {
+    &:before {
+      left: 19px;
+      margin-left: 0;
+    }
+    > div + div {
+      float: none;
+      &:before {
+        left: 0;
+      }
+    }
+    > div::before {
+      left: 0;
+      right: auto;
+    }
+    > div .item {
+      margin-left: 50px !important;
+      margin-right: 0 !important;
+      &:before {
+        border-left: none;
+        border-right: 15px solid #E5E5E5;
+        left: -16px;
+        right: auto;
+      }
+      &:after {
+        border-left: none;
+        border-right: 15px solid #FFF;
+        left: -15px;
+        right: auto;
+      }
+    }
+    > div .item .item_info,
+    > div + div .item .item_info {
+      margin: 0;
+      position: static;
+    }
+  }
+
+  .body__404 .big-404 {
+    margin-bottom: 15px;
+  }
+
+  #member-registration,
+  #member-profile,
+  #user-registration,
+  .page-login {
+    width: 100%;
+  }
+
+  #helpsite-refresh {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .page_profile {
+    .btn-toolbar {
+      float: none;
+    }
+  }
+
+  .input-prepend input {
+    width: 100%;
+  }
+
+  #adminForm #images .input-prepend.input-append .btn {
+    width: 10%;
+    + input {
+      width: 75%;
+      padding-left: 12%;
+      + .btn {
+        width: 15%;
+      }
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  #modules-form {
+    fieldset#jform_published {
+      label.btn {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px) {
+  .row-fluid [class*="span"].site_map {
+    float: left;
+    width: 50%;
+    &:nth-child(2n-1) {
+      clear: both;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .control-label + .controls {
+    margin-top: 10px;
+  }
+
+  .page-category__history .items-row > div .item {
+    padding: 20px;
+  }
+
+  .page-item__privacy_policy .item_fulltext {
+    h4 {
+      float: none;
+      width: 100%;
+    }
+    p {
+      margin-left: 0;
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  #modules-form {
+    .btn {
+      span:not(.icon-calendar) {
+        display: none;
+      }
+    }
+    .form-horizontal .control-label {
+      padding-bottom: 10px;
+      padding-top: 0;
+    }
+  }
+
+  #adminForm #images .input-prepend.input-append .btn {
+    width: 13%;
+    + input {
+      width: 64%;
+      padding-left: 15%;
+      + .btn {
+        width: 25%;
+      }
+    }
+  }
+  #login-form,
+  #member-registration,
+  #member-profile,
+  #user-registration{
+    .controls {
+      .input-prepend,.input-append{
+        .btn{
+          margin-bottom: 0;
+        }
+      }
+      .btn{
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  #adminForm .btn-toolbar .btn-group{
+    margin-bottom: 10px;
+  }
+
+}
+
