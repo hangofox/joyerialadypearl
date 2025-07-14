@@ -30,13 +30,13 @@ class JConfig {
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
 	public $mailonline = '1';
-	public $mailer = 'mail';
+	public $mailer = 'smtp';
 	public $mailfrom = 'joyerialadypearl@gmail.com';
 	public $fromname = 'JOYERIA LADY PEARL';
 	public $sendmail = '/usr/sbin/sendmail';
-	public $smtpauth = '0';
-	public $smtpuser = '';
-	public $smtppass = '';
+	public $smtpauth = '1';
+	public $smtpuser = 'joyerialadypearl@gmail.com';
+	public $smtppass = 'Joyeria#2025';
 	public $smtphost = 'localhost';
 	public $smtpsecure = 'none';
 	public $smtpport = '25';
@@ -90,4 +90,13 @@ class JConfig {
 	public $cookie_domain = '';
 	public $cookie_path = '';
 	public $asset_id = '1';
+	public $debug_lang_const = '1';
+	public $behind_loadbalancer = '0';
+	public $replyto = '';
+	public $replytoname = '';
+	public $session_redis_persist = '1';
+	public $session_redis_server_host = 'localhost';
+	public $session_redis_server_port = '6379';
+	public $session_redis_server_db = '0';
+	public $shared_session = '0';
 }
